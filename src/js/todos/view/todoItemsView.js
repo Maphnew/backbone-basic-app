@@ -5,7 +5,7 @@ import TodoItem from '../model/todoItem';
 export default View.extend({
     tagName: "ul",
 
-    id: "totoItems",
+    id: "todoItems",
 
     initialize: function(options) {
         if(!(options && options.model))

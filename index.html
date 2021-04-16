@@ -5,8 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Backbone basic app</title>
+    <style type="text/css">
+        #nav ul li { cursor: pointer; color: blue;}
+    </style>
 </head>
 <body>
+    <nav id="nav">
+        <ul>
+            <li data-url="todos">Todos</li>
+            <li data-url="posts">Posts</li>
+            <li data-url="photos">Photos</li>
+        </ul>
+    </nav>
+    <div id="root-element"></div>
     <script src="dist/js/bundle.js"></script>
 </body>
 </html>

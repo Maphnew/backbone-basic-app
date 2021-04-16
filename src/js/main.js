@@ -1,11 +1,23 @@
 import TodoItems  from "./todos/model/todoItems";
-import $ from 'jquery';
 import TodoItemsView from "./todos/view/todoItemsView";
+import { Application, View } from "backbone.marionette";
+import _ from "underscore";
+import Router from "./router";
+import $ from 'jquery';
 
-$(function(){
-    var todoItems = new TodoItems();
-    todoItems.fetch();
+const App = Application.extend({
+    region: '#root-element',
 
-    var todoItemsView = new TodoItemsView({ model: todoItems });
-    $("body").append(todoItemsView.render().$el)
-})
+    onStart() {
+        var todoItems = new TodoItems();
+        todoItems.fetch();
+
+        var todoItemsView = new TodoItemsView({ model: todoItems });
+        this.showView(todoItemsView);
+    }
+});
+
+App.router = new Router();
+
+const myApp = new App();
+myApp.start();

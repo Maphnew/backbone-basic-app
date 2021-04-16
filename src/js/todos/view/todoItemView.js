@@ -1,4 +1,4 @@
-import { View } from 'backbone';
+import { View } from 'backbone.marionette';
 export default View.extend({
     tagName: "li",
 
